@@ -1,6 +1,8 @@
-## Tgt Library
+## TGT Library
 
 **Tgt** is a library inspired by Telegram's smooth theme transition animation.
+
+![TGT](tgt.gif)
 
 ## Installation
 Step 1: Add the Repository
