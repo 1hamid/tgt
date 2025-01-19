@@ -1,0 +1,329 @@
+kotlin version: 2.0.0
+error message: org.jetbrains.kotlin.backend.common.BackendException: Backend Internal error: Exception during IR lowering
+File being compiled: C:/Users/Rezaee/AndroidStudioProjects/tgtTest/tgt/src/main/java/com/example/tgt/TgtAnimation.kt
+The root cause java.lang.RuntimeException was thrown at: org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException(CodegenUtil.kt:253)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException$default(CodegenUtil.kt:236)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:65)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:52)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:38)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:29)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:16)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:62)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.invokeCodegen(JvmIrCodegenFactory.kt:371)
+	at org.jetbrains.kotlin.codegen.CodegenFactory.generateModule(CodegenFactory.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.generateModuleInFrontendIRMode(JvmIrCodegenFactory.kt:433)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.generateCodeFromIr(jvmCompilerPipeline.kt:241)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.compileModulesUsingFrontendIrAndLightTree(jvmCompilerPipeline.kt:140)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:155)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:50)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:104)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:48)
+	at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:101)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:453)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:62)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:506)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:423)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileNonIncrementally(IncrementalCompilerRunner.kt:301)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:129)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:676)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:92)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1661)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN name:TgtAnimation-d-4ec7I visibility:public modality:FINAL <> (bitmap:android.graphics.Bitmap, buttonOffset:androidx.compose.ui.geometry.Offset, darkMode:kotlin.Boolean) returnType:kotlin.Unit
+  annotations:
+    Composable
+  VALUE_PARAMETER name:bitmap index:0 type:android.graphics.Bitmap
+  VALUE_PARAMETER name:buttonOffset index:1 type:androidx.compose.ui.geometry.Offset
+  VALUE_PARAMETER name:darkMode index:2 type:kotlin.Boolean
+  BLOCK_BODY
+    VAR name:imageBrush type:androidx.compose.ui.graphics.ShaderBrush [val]
+      CALL 'public final fun ShaderBrush (shader: android.graphics.Shader): androidx.compose.ui.graphics.ShaderBrush declared in androidx.compose.ui.graphics.BrushKt' type=androidx.compose.ui.graphics.ShaderBrush origin=null
+        shader: CALL 'public final fun ImageShader-F49vj9s$default (image: androidx.compose.ui.graphics.ImageBitmap, tileModeX: androidx.compose.ui.graphics.TileMode, tileModeY: androidx.compose.ui.graphics.TileMode, $mask0: kotlin.Int, $handler: kotlin.Any?): android.graphics.Shader declared in androidx.compose.ui.graphics.ShaderKt' type=android.graphics.Shader origin=DEFAULT_DISPATCH_CALL
+          image: CALL 'public final fun asImageBitmap (): androidx.compose.ui.graphics.ImageBitmap declared in androidx.compose.ui.graphics.AndroidImageBitmap_androidKt' type=androidx.compose.ui.graphics.ImageBitmap origin=null
+            $receiver: GET_VAR 'bitmap: android.graphics.Bitmap declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=android.graphics.Bitmap origin=null
+          tileModeX: COMPOSITE type=androidx.compose.ui.graphics.TileMode origin=DEFAULT_VALUE
+            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.TileMode origin=null
+              <T>: kotlin.Int
+              <R>: androidx.compose.ui.graphics.TileMode
+              v: CONST Int type=kotlin.Int value=0
+          tileModeY: COMPOSITE type=androidx.compose.ui.graphics.TileMode origin=DEFAULT_VALUE
+            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.graphics.TileMode origin=null
+              <T>: kotlin.Int
+              <R>: androidx.compose.ui.graphics.TileMode
+              v: CONST Int type=kotlin.Int value=0
+          $mask0: CONST Int type=kotlin.Int value=6
+          $handler: CONST Null type=kotlin.Any? value=null
+    VAR PROPERTY_DELEGATE name:darkRadius$delegate type:androidx.compose.runtime.MutableFloatState [val]
+      CALL 'public final fun remember <T> (calculation: @[DisallowComposableCalls] kotlin.Function0<T of androidx.compose.runtime.ComposablesKt.remember>): T of androidx.compose.runtime.ComposablesKt.remember [inline] declared in androidx.compose.runtime.ComposablesKt' type=androidx.compose.runtime.MutableFloatState origin=null
+        <T>: androidx.compose.runtime.MutableFloatState
+        calculation: BLOCK type=kotlin.Function0<androidx.compose.runtime.MutableFloatState> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun TgtAnimation_d_4ec7I$lambda$0 (): androidx.compose.runtime.MutableFloatState declared in com.example.tgt.TgtAnimationKt' type=kotlin.Function0<androidx.compose.runtime.MutableFloatState> origin=INLINE_LAMBDA reflectionTarget=null
+    VAR PROPERTY_DELEGATE name:lightRadius$delegate type:androidx.compose.runtime.MutableFloatState [val]
+      CALL 'public final fun remember <T> (calculation: @[DisallowComposableCalls] kotlin.Function0<T of androidx.compose.runtime.ComposablesKt.remember>): T of androidx.compose.runtime.ComposablesKt.remember [inline] declared in androidx.compose.runtime.ComposablesKt' type=androidx.compose.runtime.MutableFloatState origin=null
+        <T>: androidx.compose.runtime.MutableFloatState
+        calculation: BLOCK type=kotlin.Function0<androidx.compose.runtime.MutableFloatState> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun TgtAnimation_d_4ec7I$lambda$3 (): androidx.compose.runtime.MutableFloatState declared in com.example.tgt.TgtAnimationKt' type=kotlin.Function0<androidx.compose.runtime.MutableFloatState> origin=INLINE_LAMBDA reflectionTarget=null
+    VAR PROPERTY_DELEGATE name:darkAnimatedRadius$delegate type:androidx.compose.runtime.State<kotlin.Float> [val]
+      CALL 'public final fun animateFloatAsState$default (targetValue: kotlin.Float, animationSpec: androidx.compose.animation.core.AnimationSpec<kotlin.Float>?, visibilityThreshold: kotlin.Float, label: kotlin.String?, finishedListener: kotlin.Function1<kotlin.Float, kotlin.Unit>?, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.runtime.State<kotlin.Float> declared in androidx.compose.animation.core.AnimateAsStateKt' type=androidx.compose.runtime.State<kotlin.Float> origin=DEFAULT_DISPATCH_CALL
+        targetValue: CALL 'private final fun TgtAnimation_d_4ec7I$lambda$1 ($darkRadius$delegate: androidx.compose.runtime.MutableFloatState): kotlin.Float declared in com.example.tgt.TgtAnimationKt' type=kotlin.Float origin=GET_LOCAL_PROPERTY
+          $darkRadius$delegate: GET_VAR 'val darkRadius$delegate: androidx.compose.runtime.MutableFloatState [val] declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=androidx.compose.runtime.MutableFloatState origin=null
+        animationSpec: TYPE_OP type=androidx.compose.animation.core.TweenSpec<kotlin.Float> origin=IMPLICIT_CAST typeOperand=androidx.compose.animation.core.TweenSpec<kotlin.Float>
+          CALL 'public final fun tween$default <T> (durationMillis: kotlin.Int, delayMillis: kotlin.Int, easing: androidx.compose.animation.core.Easing?, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.animation.core.TweenSpec<T of androidx.compose.animation.core.AnimationSpecKt.tween$default> declared in androidx.compose.animation.core.AnimationSpecKt' type=androidx.compose.animation.core.TweenSpec<T of androidx.compose.animation.core.AnimationSpecKt.tween$default> origin=DEFAULT_DISPATCH_CALL
+            <T>: kotlin.Float
+            durationMillis: CONST Int type=kotlin.Int value=500
+            delayMillis: COMPOSITE type=kotlin.Int origin=DEFAULT_VALUE
+              CONST Int type=kotlin.Int value=0
+            easing: COMPOSITE type=androidx.compose.animation.core.Easing? origin=DEFAULT_VALUE
+              CONST Null type=androidx.compose.animation.core.Easing? value=null
+            $mask0: CONST Int type=kotlin.Int value=6
+            $handler: CONST Null type=kotlin.Any? value=null
+        visibilityThreshold: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+          CONST Float type=kotlin.Float value=0.0
+        label: CONST String type=kotlin.String value=""
+        finishedListener: COMPOSITE type=kotlin.Function1<kotlin.Float, kotlin.Unit>? origin=DEFAULT_VALUE
+          CONST Null type=kotlin.Function1<kotlin.Float, kotlin.Unit>? value=null
+        $mask0: CONST Int type=kotlin.Int value=20
+        $handler: CONST Null type=kotlin.Any? value=null
+    VAR PROPERTY_DELEGATE name:lightAnimatedRadius$delegate type:androidx.compose.runtime.State<kotlin.Float> [val]
+      CALL 'public final fun animateFloatAsState$default (targetValue: kotlin.Float, animationSpec: androidx.compose.animation.core.AnimationSpec<kotlin.Float>?, visibilityThreshold: kotlin.Float, label: kotlin.String?, finishedListener: kotlin.Function1<kotlin.Float, kotlin.Unit>?, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.runtime.State<kotlin.Float> declared in androidx.compose.animation.core.AnimateAsStateKt' type=androidx.compose.runtime.State<kotlin.Float> origin=DEFAULT_DISPATCH_CALL
+        targetValue: CALL 'private final fun TgtAnimation_d_4ec7I$lambda$4 ($lightRadius$delegate: androidx.compose.runtime.MutableFloatState): kotlin.Float declared in com.example.tgt.TgtAnimationKt' type=kotlin.Float origin=GET_LOCAL_PROPERTY
+          $lightRadius$delegate: GET_VAR 'val lightRadius$delegate: androidx.compose.runtime.MutableFloatState [val] declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=androidx.compose.runtime.MutableFloatState origin=null
+        animationSpec: TYPE_OP type=androidx.compose.animation.core.TweenSpec<kotlin.Float> origin=IMPLICIT_CAST typeOperand=androidx.compose.animation.core.TweenSpec<kotlin.Float>
+          CALL 'public final fun tween$default <T> (durationMillis: kotlin.Int, delayMillis: kotlin.Int, easing: androidx.compose.animation.core.Easing?, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.animation.core.TweenSpec<T of androidx.compose.animation.core.AnimationSpecKt.tween$default> declared in androidx.compose.animation.core.AnimationSpecKt' type=androidx.compose.animation.core.TweenSpec<T of androidx.compose.animation.core.AnimationSpecKt.tween$default> origin=DEFAULT_DISPATCH_CALL
+            <T>: kotlin.Float
+            durationMillis: CONST Int type=kotlin.Int value=500
+            delayMillis: COMPOSITE type=kotlin.Int origin=DEFAULT_VALUE
+              CONST Int type=kotlin.Int value=0
+            easing: COMPOSITE type=androidx.compose.animation.core.Easing? origin=DEFAULT_VALUE
+              CONST Null type=androidx.compose.animation.core.Easing? value=null
+            $mask0: CONST Int type=kotlin.Int value=6
+            $handler: CONST Null type=kotlin.Any? value=null
+        visibilityThreshold: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+          CONST Float type=kotlin.Float value=0.0
+        label: CONST String type=kotlin.String value=""
+        finishedListener: COMPOSITE type=kotlin.Function1<kotlin.Float, kotlin.Unit>? origin=DEFAULT_VALUE
+          CONST Null type=kotlin.Function1<kotlin.Float, kotlin.Unit>? value=null
+        $mask0: CONST Int type=kotlin.Int value=20
+        $handler: CONST Null type=kotlin.Any? value=null
+    CALL 'public final fun LaunchedEffect (key1: kotlin.Any?, block: @[ExtensionFunctionType] kotlin.coroutines.SuspendFunction1<kotlinx.coroutines.CoroutineScope, kotlin.Unit>): kotlin.Unit declared in androidx.compose.runtime.EffectsKt' type=kotlin.Unit origin=null
+      key1: GET_VAR 'darkMode: kotlin.Boolean declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=kotlin.Boolean origin=null
+      block: BLOCK type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+        CLASS SUSPEND_LAMBDA CLASS name:<no name provided> modality:FINAL visibility:public/*package*/ superTypes:[kotlin.coroutines.jvm.internal.SuspendLambda; kotlin.jvm.functions.Function2<kotlinx.coroutines.CoroutineScope, kotlin.coroutines.Continuation<kotlin.Unit>?, kotlin.Any?>]
+          $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>
+          FIELD name:label type:kotlin.Int visibility:public/*package*/
+          CONSTRUCTOR SUSPEND_LAMBDA visibility:public/*package*/ <> ($darkMode:kotlin.Boolean, $darkRadius$delegate:androidx.compose.runtime.MutableFloatState, $lightRadius$delegate:androidx.compose.runtime.MutableFloatState, $completion:kotlin.coroutines.Continuation<com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>>?) returnType:com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> [primary]
+            VALUE_PARAMETER BOUND_VALUE_PARAMETER name:$darkMode index:0 type:kotlin.Boolean
+            VALUE_PARAMETER BOUND_VALUE_PARAMETER name:$darkRadius$delegate index:1 type:androidx.compose.runtime.MutableFloatState
+            VALUE_PARAMETER BOUND_VALUE_PARAMETER name:$lightRadius$delegate index:2 type:androidx.compose.runtime.MutableFloatState
+            VALUE_PARAMETER name:$completion index:3 type:kotlin.coroutines.Continuation<com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>>?
+            BLOCK_BODY
+              SET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$darkMode type:kotlin.Boolean visibility:public/*package*/ [final]' type=kotlin.Unit origin=INITIALIZER_OF_FIELD_FOR_CAPTURED_VALUE
+                receiver: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                value: GET_VAR '$darkMode: kotlin.Boolean declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.<init>' type=kotlin.Boolean origin=null
+              SET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$darkRadius$delegate type:androidx.compose.runtime.MutableFloatState visibility:public/*package*/ [final]' type=kotlin.Unit origin=INITIALIZER_OF_FIELD_FOR_CAPTURED_VALUE
+                receiver: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                value: GET_VAR '$darkRadius$delegate: androidx.compose.runtime.MutableFloatState declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.<init>' type=androidx.compose.runtime.MutableFloatState origin=null
+              SET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$lightRadius$delegate type:androidx.compose.runtime.MutableFloatState visibility:public/*package*/ [final]' type=kotlin.Unit origin=INITIALIZER_OF_FIELD_FOR_CAPTURED_VALUE
+                receiver: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                value: GET_VAR '$lightRadius$delegate: androidx.compose.runtime.MutableFloatState declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.<init>' type=androidx.compose.runtime.MutableFloatState origin=null
+              DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> (arity: kotlin.Int, $completion: kotlin.coroutines.Continuation<kotlin.Any?>?) declared in kotlin.coroutines.jvm.internal.SuspendLambda'
+                arity: CONST Int type=kotlin.Int value=2
+                $completion: GET_VAR '$completion: kotlin.coroutines.Continuation<com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>>? declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.<init>' type=kotlin.coroutines.Continuation<com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>>? origin=null
+              BLOCK type=kotlin.Unit origin=null
+          FUN name:invokeSuspend visibility:public modality:FINAL <> ($this:com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>, $result:kotlin.Result<kotlin.Any?>) returnType:kotlin.Any?
+            overridden:
+              protected abstract fun invokeSuspend ($result: kotlin.Result<kotlin.Any?>): kotlin.Any? declared in kotlin.coroutines.jvm.internal.SuspendLambda
+            $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>
+            VALUE_PARAMETER name:$result index:0 type:kotlin.Result<kotlin.Any?>
+            BLOCK_BODY
+              WHEN type=kotlin.Unit origin=IF
+                BRANCH
+                  if: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                    $this: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$darkMode type:kotlin.Boolean visibility:public/*package*/ [final]' type=kotlin.Boolean origin=null
+                      receiver: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.invokeSuspend' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                  then: BLOCK type=kotlin.Unit origin=null
+                    CALL 'public final fun access$TgtAnimation_d_4ec7I$lambda$2 ($darkRadius$delegate: androidx.compose.runtime.MutableFloatState, <set-?>: kotlin.Float): kotlin.Unit declared in com.example.tgt.TgtAnimationKt' type=kotlin.Unit origin=EQ
+                      $darkRadius$delegate: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$darkRadius$delegate type:androidx.compose.runtime.MutableFloatState visibility:public/*package*/ [final]' type=androidx.compose.runtime.MutableFloatState origin=null
+                        receiver: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.invokeSuspend' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                      <set-?>: CONST Float type=kotlin.Float value=0.0
+                    CALL 'public final fun access$TgtAnimation_d_4ec7I$lambda$5 ($lightRadius$delegate: androidx.compose.runtime.MutableFloatState, <set-?>: kotlin.Float): kotlin.Unit declared in com.example.tgt.TgtAnimationKt' type=kotlin.Unit origin=EQ
+                      $lightRadius$delegate: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$lightRadius$delegate type:androidx.compose.runtime.MutableFloatState visibility:public/*package*/ [final]' type=androidx.compose.runtime.MutableFloatState origin=null
+                        receiver: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.invokeSuspend' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                      <set-?>: CONST Float type=kotlin.Float value=0.0
+                BRANCH
+                  if: CONST Boolean type=kotlin.Boolean value=true
+                  then: BLOCK type=kotlin.Unit origin=null
+                    CALL 'public final fun access$TgtAnimation_d_4ec7I$lambda$2 ($darkRadius$delegate: androidx.compose.runtime.MutableFloatState, <set-?>: kotlin.Float): kotlin.Unit declared in com.example.tgt.TgtAnimationKt' type=kotlin.Unit origin=EQ
+                      $darkRadius$delegate: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$darkRadius$delegate type:androidx.compose.runtime.MutableFloatState visibility:public/*package*/ [final]' type=androidx.compose.runtime.MutableFloatState origin=null
+                        receiver: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.invokeSuspend' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                      <set-?>: CONST Float type=kotlin.Float value=5000.0
+                    CALL 'public final fun access$TgtAnimation_d_4ec7I$lambda$5 ($lightRadius$delegate: androidx.compose.runtime.MutableFloatState, <set-?>: kotlin.Float): kotlin.Unit declared in com.example.tgt.TgtAnimationKt' type=kotlin.Unit origin=EQ
+                      $lightRadius$delegate: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$lightRadius$delegate type:androidx.compose.runtime.MutableFloatState visibility:public/*package*/ [final]' type=androidx.compose.runtime.MutableFloatState origin=null
+                        receiver: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.invokeSuspend' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                      <set-?>: CONST Float type=kotlin.Float value=5000.0
+          FUN name:create visibility:public modality:FINAL <> ($this:com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>, value:kotlin.Any?, $completion:kotlin.coroutines.Continuation<kotlin.Nothing>) returnType:kotlin.coroutines.Continuation<kotlin.Unit>
+            overridden:
+              public open fun create (value: kotlin.Any?, $completion: kotlin.coroutines.Continuation<kotlin.Nothing>): kotlin.coroutines.Continuation<kotlin.Unit> declared in kotlin.coroutines.jvm.internal.SuspendLambda
+            $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>
+            VALUE_PARAMETER name:value index:0 type:kotlin.Any?
+            VALUE_PARAMETER name:$completion index:1 type:kotlin.coroutines.Continuation<kotlin.Nothing>
+            BLOCK_BODY
+              RETURN type=kotlin.Nothing from='public final fun create (value: kotlin.Any?, $completion: kotlin.coroutines.Continuation<kotlin.Nothing>): kotlin.coroutines.Continuation<kotlin.Unit> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>'
+                CONSTRUCTOR_CALL 'public/*package*/ constructor <init> ($darkMode: kotlin.Boolean, $darkRadius$delegate: androidx.compose.runtime.MutableFloatState, $lightRadius$delegate: androidx.compose.runtime.MutableFloatState, $completion: kotlin.coroutines.Continuation<com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>>?) [primary] declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                  $darkMode: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$darkMode type:kotlin.Boolean visibility:public/*package*/ [final]' type=kotlin.Boolean origin=null
+                    receiver: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.create' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                  $darkRadius$delegate: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$darkRadius$delegate type:androidx.compose.runtime.MutableFloatState visibility:public/*package*/ [final]' type=androidx.compose.runtime.MutableFloatState origin=null
+                    receiver: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.create' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                  $lightRadius$delegate: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$lightRadius$delegate type:androidx.compose.runtime.MutableFloatState visibility:public/*package*/ [final]' type=androidx.compose.runtime.MutableFloatState origin=null
+                    receiver: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.create' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                  $completion: GET_VAR '$completion: kotlin.coroutines.Continuation<kotlin.Nothing> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.create' type=kotlin.coroutines.Continuation<kotlin.Nothing> origin=null
+          FUN name:invoke visibility:public modality:FINAL <> ($this:com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>, p1:kotlinx.coroutines.CoroutineScope, p2:kotlin.coroutines.Continuation<kotlin.Unit>?) returnType:kotlin.Any?
+            overridden:
+              public abstract fun invoke (p1: P1 of kotlin.jvm.functions.Function2, p2: P2 of kotlin.jvm.functions.Function2): R of kotlin.jvm.functions.Function2 declared in kotlin.jvm.functions.Function2
+            $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>
+            VALUE_PARAMETER name:p1 index:0 type:kotlinx.coroutines.CoroutineScope
+            VALUE_PARAMETER name:p2 index:1 type:kotlin.coroutines.Continuation<kotlin.Unit>?
+            BLOCK_BODY
+              RETURN type=kotlin.Nothing from='public final fun invoke (p1: kotlinx.coroutines.CoroutineScope, p2: kotlin.coroutines.Continuation<kotlin.Unit>?): kotlin.Any? declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>'
+                CALL 'public final fun invokeSuspend ($result: kotlin.Result<kotlin.Any?>): kotlin.Any? declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>' type=kotlin.Any? origin=null
+                  $this: TYPE_OP type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=IMPLICIT_CAST typeOperand=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>
+                    CALL 'public final fun create (value: kotlin.Any?, $completion: kotlin.coroutines.Continuation<kotlin.Nothing>): kotlin.coroutines.Continuation<kotlin.Unit> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>' type=kotlin.coroutines.Continuation<kotlin.Unit> origin=null
+                      $this: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.invoke' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                      value: GET_VAR 'p1: kotlinx.coroutines.CoroutineScope declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.invoke' type=kotlinx.coroutines.CoroutineScope origin=null
+                      $completion: GET_VAR 'p2: kotlin.coroutines.Continuation<kotlin.Unit>? declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.invoke' type=kotlin.coroutines.Continuation<kotlin.Unit>? origin=null
+                  $result: CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=kotlin.Result<kotlin.Any?> origin=null
+                    <T>: kotlin.Any?
+                    <R>: kotlin.Result<kotlin.Any?>
+                    v: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:kotlin.Unit visibility:public [final,static]' type=kotlin.Unit origin=null
+          FIELD FIELD_FOR_CAPTURED_VALUE name:$darkMode type:kotlin.Boolean visibility:public/*package*/ [final]
+          FIELD FIELD_FOR_CAPTURED_VALUE name:$darkRadius$delegate type:androidx.compose.runtime.MutableFloatState visibility:public/*package*/ [final]
+          FIELD FIELD_FOR_CAPTURED_VALUE name:$lightRadius$delegate type:androidx.compose.runtime.MutableFloatState visibility:public/*package*/ [final]
+          FUN BRIDGE name:invoke visibility:public modality:OPEN <> ($this:com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>, p1:kotlin.Any?, p2:kotlin.Any?) returnType:kotlin.Any?
+            $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>
+            VALUE_PARAMETER BRIDGE name:p1 index:0 type:kotlin.Any?
+            VALUE_PARAMETER BRIDGE name:p2 index:1 type:kotlin.Any?
+            EXPRESSION_BODY
+              RETURN type=kotlin.Nothing from='public open fun invoke (p1: kotlin.Any?, p2: kotlin.Any?): kotlin.Any? declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>'
+                CALL 'public final fun invoke (p1: kotlinx.coroutines.CoroutineScope, p2: kotlin.coroutines.Continuation<kotlin.Unit>?): kotlin.Any? declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>' type=kotlin.Any? origin=BRIDGE_DELEGATION
+                  $this: GET_VAR '<this>: com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.invoke' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+                  p1: TYPE_OP type=kotlinx.coroutines.CoroutineScope origin=IMPLICIT_CAST typeOperand=kotlinx.coroutines.CoroutineScope
+                    GET_VAR 'p1: kotlin.Any? declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.invoke' type=kotlin.Any? origin=null
+                  p2: TYPE_OP type=kotlin.coroutines.Continuation<*> origin=IMPLICIT_CAST typeOperand=kotlin.coroutines.Continuation<*>
+                    GET_VAR 'p2: kotlin.Any? declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>.invoke' type=kotlin.Any? origin=null
+        CONSTRUCTOR_CALL 'public/*package*/ constructor <init> ($darkMode: kotlin.Boolean, $darkRadius$delegate: androidx.compose.runtime.MutableFloatState, $lightRadius$delegate: androidx.compose.runtime.MutableFloatState, $completion: kotlin.coroutines.Continuation<com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>>?) [primary] declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided>' type=com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I.<no name provided> origin=null
+          $darkMode: GET_VAR 'darkMode: kotlin.Boolean declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=kotlin.Boolean origin=null
+          $darkRadius$delegate: GET_VAR 'val darkRadius$delegate: androidx.compose.runtime.MutableFloatState [val] declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=androidx.compose.runtime.MutableFloatState origin=null
+          $lightRadius$delegate: GET_VAR 'val lightRadius$delegate: androidx.compose.runtime.MutableFloatState [val] declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=androidx.compose.runtime.MutableFloatState origin=null
+          $completion: CONST Null type=kotlin.Nothing? value=null
+    CALL 'public final fun Canvas (modifier: androidx.compose.ui.Modifier, onDraw: @[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.drawscope.DrawScope, kotlin.Unit>): kotlin.Unit declared in androidx.compose.foundation.CanvasKt' type=kotlin.Unit origin=null
+      modifier: CALL 'public final fun graphicsLayer (block: @[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.GraphicsLayerScope, kotlin.Unit>): androidx.compose.ui.Modifier declared in androidx.compose.ui.graphics.GraphicsLayerModifierKt' type=androidx.compose.ui.Modifier origin=null
+        $receiver: CALL 'public final fun fillMaxSize$default (fraction: kotlin.Float, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.SizeKt' type=androidx.compose.ui.Modifier origin=DEFAULT_DISPATCH_CALL
+          $receiver: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.Modifier.Companion visibility:public [final,static]' type=androidx.compose.ui.Modifier.Companion origin=null
+          fraction: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+            CONST Float type=kotlin.Float value=0.0
+          $mask0: CONST Int type=kotlin.Int value=1
+          $handler: CONST Null type=kotlin.Any? value=null
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.GraphicsLayerScope, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=@[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.GraphicsLayerScope, kotlin.Unit> origin=null
+            <T>: @[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.GraphicsLayerScope, kotlin.Unit>
+            dynamicCall: CALL 'public final fun invoke (): @[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.GraphicsLayerScope, kotlin.Unit> declared in kotlin.jvm.internal.invokeDynamic' type=@[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.GraphicsLayerScope, kotlin.Unit> origin=null
+            bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              tag: CONST Int type=kotlin.Int value=6
+              owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+              name: CONST String type=kotlin.String value="metafactory"
+              descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+              isInterface: CONST Boolean type=kotlin.Boolean value=false
+            bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+              CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                method: RAW_FUNCTION_REFERENCE 'public abstract fun invoke (p1: P1 of kotlin.Function1): R of kotlin.Function1 [operator] declared in kotlin.Function1' type=kotlin.Any
+              RAW_FUNCTION_REFERENCE 'private final fun TgtAnimation_d_4ec7I$lambda$8 ($this$graphicsLayer: androidx.compose.ui.graphics.GraphicsLayerScope): kotlin.Unit? declared in com.example.tgt.TgtAnimationKt' type=kotlin.Any
+              CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                method: RAW_FUNCTION_REFERENCE 'public abstract fun invoke (p1: androidx.compose.ui.graphics.GraphicsLayerScope): kotlin.Unit? [fake_override,operator] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+      onDraw: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.drawscope.DrawScope, kotlin.Unit> origin=LAMBDA
+        COMPOSITE type=kotlin.Unit origin=null
+        CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=@[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.drawscope.DrawScope, kotlin.Unit> origin=null
+          <T>: @[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.drawscope.DrawScope, kotlin.Unit>
+          dynamicCall: CALL 'public final fun invoke (p0: kotlin.Boolean, p1: androidx.compose.ui.graphics.ShaderBrush, p2: androidx.compose.ui.geometry.Offset, p3: androidx.compose.runtime.State<kotlin.Float>, p4: androidx.compose.runtime.State<kotlin.Float>): @[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.drawscope.DrawScope, kotlin.Unit> declared in kotlin.jvm.internal.invokeDynamic' type=@[ExtensionFunctionType] kotlin.Function1<androidx.compose.ui.graphics.drawscope.DrawScope, kotlin.Unit> origin=null
+            p0: GET_VAR 'darkMode: kotlin.Boolean declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=kotlin.Boolean origin=null
+            p1: GET_VAR 'val imageBrush: androidx.compose.ui.graphics.ShaderBrush [val] declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=androidx.compose.ui.graphics.ShaderBrush origin=null
+            p2: GET_VAR 'buttonOffset: androidx.compose.ui.geometry.Offset declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=androidx.compose.ui.geometry.Offset origin=null
+            p3: GET_VAR 'val darkAnimatedRadius$delegate: androidx.compose.runtime.State<kotlin.Float> [val] declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=androidx.compose.runtime.State<kotlin.Float> origin=null
+            p4: GET_VAR 'val lightAnimatedRadius$delegate: androidx.compose.runtime.State<kotlin.Float> [val] declared in com.example.tgt.TgtAnimationKt.TgtAnimation-d-4ec7I' type=androidx.compose.runtime.State<kotlin.Float> origin=null
+          bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+            tag: CONST Int type=kotlin.Int value=6
+            owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+            name: CONST String type=kotlin.String value="metafactory"
+            descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+            isInterface: CONST Boolean type=kotlin.Boolean value=false
+          bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun invoke (p1: P1 of kotlin.Function1): R of kotlin.Function1 [operator] declared in kotlin.Function1' type=kotlin.Any
+            RAW_FUNCTION_REFERENCE 'private final fun TgtAnimation_d_4ec7I$lambda$9 ($darkMode: kotlin.Boolean, $imageBrush: androidx.compose.ui.graphics.ShaderBrush, $buttonOffset: androidx.compose.ui.geometry.Offset, $darkAnimatedRadius$delegate: androidx.compose.runtime.State<kotlin.Float>, $lightAnimatedRadius$delegate: androidx.compose.runtime.State<kotlin.Float>, $this$Canvas: androidx.compose.ui.graphics.drawscope.DrawScope): kotlin.Unit? declared in com.example.tgt.TgtAnimationKt' type=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun invoke (p1: androidx.compose.ui.graphics.drawscope.DrawScope): kotlin.Unit? [fake_override,operator] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:42)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:385)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:402)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:169)
+	at org.jetbrains.kotlin.backend.jvm.FileCodegen.lower(JvmPhases.kt:41)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt.makeIrFilePhase$lambda$5(PhaseBuilders.kt:114)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$createSimpleNamedCompilerPhase$1.phaseBody(PhaseBuilders.kt:71)
+	at org.jetbrains.kotlin.backend.common.phaser.SimpleNamedCompilerPhase.phaseBody(CompilerPhase.kt:226)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:62)
+	... 43 more
+Caused by: org.jetbrains.kotlin.codegen.CompilationException: Back-end (JVM) Internal error: Couldn't inline method call: CALL 'public final fun remember <T> (calculation: @[DisallowComposableCalls] kotlin.Function0<T of androidx.compose.runtime.ComposablesKt.remember>): T of androidx.compose.runtime.ComposablesKt.remember [inline] declared in androidx.compose.runtime.ComposablesKt' type=androidx.compose.runtime.MutableFloatState origin=null
+Method: null
+File is unknown
+The root cause java.lang.IllegalStateException was thrown at: org.jetbrains.kotlin.codegen.inline.SourceCompilerForInlineKt.getMethodNode(SourceCompilerForInline.kt:118)
+	at org.jetbrains.kotlin.codegen.inline.InlineCodegen.performInline(InlineCodegen.kt:65)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCodegen.genInlineCall(IrInlineCodegen.kt:162)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCallGenerator.genCall(IrInlineCallGenerator.kt:36)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:647)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:784)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.declarations.IrVariable.accept(IrVariable.kt:36)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:578)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:239)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:121)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:46)
+	... 53 more
+Caused by: java.lang.IllegalStateException: couldn't find inline method Landroidx/compose/runtime/ComposablesKt;.remember(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+	at org.jetbrains.kotlin.codegen.inline.SourceCompilerForInlineKt.getMethodNode(SourceCompilerForInline.kt:118)
+	at org.jetbrains.kotlin.codegen.inline.SourceCompilerForInlineKt.loadCompiledInlineFunction(SourceCompilerForInline.kt:96)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrSourceCompilerForInline.compileInlineFunction(IrSourceCompilerForInline.kt:91)
+	at org.jetbrains.kotlin.codegen.inline.InlineCodegen.compileInline(InlineCodegen.kt:43)
+	at org.jetbrains.kotlin.codegen.inline.InlineCodegen.performInline(InlineCodegen.kt:51)
+	... 68 more
+
+
